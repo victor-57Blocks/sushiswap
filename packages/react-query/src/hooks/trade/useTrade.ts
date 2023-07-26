@@ -27,6 +27,7 @@ export const useTradeQuery = (
             params.searchParams.set('to', `${recipient}`)
             params.searchParams.set('preferSushi', 'true')
 
+            console.log(`Swap api params: ${params.toString()}`)
             const res = await fetch(params.toString())
             return tradeValidator.parse(await res.json())
         },
